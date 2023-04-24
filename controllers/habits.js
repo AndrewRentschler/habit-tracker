@@ -5,10 +5,10 @@ function index(req, res) {
   .populate('owner')
   .then(habits => {
     console.log(habits) //DELETELATER
-    res.render('habits/index'), {
-      habits,
-      title: "Habits"
-    }
+    res.render('habits/index', {
+      habits: habits,
+      title: "Habits",
+    })
   })
   .catch(err => {
     console.log(err) //KEEP

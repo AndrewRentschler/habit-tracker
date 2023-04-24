@@ -18,10 +18,9 @@
   <ul>
     <% habits.forEach(habit => { %>
       <li>
-        <a href="/habits/<%= habit._id %>"><%= habit.name %></a>
+        <a href="/habits/<%= habit._id %>"><%= habit.btnName %> </a>
       </li>
     <% }) %>
   </ul>
-
 </section>
 <%- include('../partials/footer') %>

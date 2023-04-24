@@ -1,0 +1,8 @@
+  <!-- <h2>Habits</h2>
+  <ul>
+    <% habits.forEach(habit => { %>
+      <li>
+        <a href="/habits/<%= habit._id %>"><%= habit.name %></a>
+      </li>
+    <% }) %>
+  </ul> -->

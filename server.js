@@ -66,7 +66,7 @@ app.use('/', indexRouter)
 app.use('/auth', authRouter)
 app.use('/habits', habitsRouter)
 // app.use('/profiles', profilesRouter)
-app.use('/auth', authRouter)
+
 
 
 // catch 404 and forward to error handler
