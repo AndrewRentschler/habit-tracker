@@ -10,11 +10,22 @@ const logSchema = new Schema({
 })
 
 const habitSchema = new Schema({
-  btnName: String,
-  longName: String,
-  owner: { type: Schema.Types.ObjectId, ref: 'Profile' },
+  btnName: {
+    type: String,
+    required: true,
+  },
+  longName: {
+    type: String,
+  },
+  owner: { 
+    type: Schema.Types.ObjectId, 
+    ref: 'Profile' 
+  },
   description: String,
-  currentStreak: Number,
+  currentStreak: {
+    type: Number,
+    default: 0,
+  },
   logs: [logSchema]
 }, {
   timestamps: true,
