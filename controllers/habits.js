@@ -3,10 +3,10 @@ import { Habit } from "../models/habit.js"
 function index(req, res) {
   Habit.find({})
   .populate('owner')
-  .then(habits => {
-    console.log(habits) //DELETELATER
+  .then(habit => {
+    console.log(habit) //DELETELATER
     res.render('habits/index', {
-      habits: habits,
+      habit: habit,
       title: "Habits",
     })
   })
@@ -19,6 +19,9 @@ function index(req, res) {
 function create(req, res){
   console.log('init create controller') //DELETELATER
   req.body.owner = req.user.profile._id
+  req.body.longName = "abc"
+  req.body.description = "description"
+  req.body.currentStreak = 0
   Habit.create(req.body)
   .then(habit => {
     res.redirect('/habits')
@@ -30,11 +33,11 @@ function create(req, res){
 }
 
 function show(req, res) {
-  Habit.findById(req.params.habitID)
+  Habit.findById(req.params.habitId)
   .populate("owner")
   .then(habit => {
     res.render('habits/show', {
-      habit,
+      habit: habit,
       title: "Habit Show"
     })
   })
@@ -45,7 +48,7 @@ function show(req, res) {
 }
 
 function edit(req, res) {
-  Habit.findById(req.params.habitID)
+  Habit.findById(req.params.habitId)
   .then(habit => {
     res.render('habits/edit'), {
       habit,
