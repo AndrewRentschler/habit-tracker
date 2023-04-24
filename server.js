@@ -23,6 +23,9 @@ import { router as indexRouter } from './routes/index.js'
 import { router as authRouter } from './routes/auth.js'
 import { router as habitsRouter } from './routes/habits.js'
 import { router as usersRouter } from './routes/users.js'
+import { router as profilesRouter } from './routes/profiles.js'
+// A NEW route appears!
+import { router as authRouter } from './routes/auth.js'
 
 // create the express app
 const app = express()
@@ -63,7 +66,9 @@ app.use(passDataToView)
 app.use('/', indexRouter)
 app.use('/auth', authRouter)
 app.use('/habits', habitsRouter)
-app.use('/users', usersRouter)
+// app.use('/profiles', profilesRouter)
+app.use('/auth', authRouter)
+
 
 // catch 404 and forward to error handler
 app.use(function (req, res, next) {
