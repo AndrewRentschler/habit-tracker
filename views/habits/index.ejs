@@ -6,8 +6,10 @@
   <ul>
     <% habit.forEach(habit => { %>
       <li>
+        <a href=""><%= habit.btnName %> - <%= habit.currentStreak %></a>
+        <%= habit.btnName %> - <%= habit.currentStreak %>
         <a href="habits/<%= habit._id %>/edit">
-        <button><%= habit.btnName %> - <%= habit.currentStreak %></button>
+        <button>edit</button>
         </a>
       </li>
     <% }) %>
