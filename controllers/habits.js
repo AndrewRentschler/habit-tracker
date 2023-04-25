@@ -50,10 +50,10 @@ function show(req, res) {
 function edit(req, res) {
   Habit.findById(req.params.habitId)
   .then(habit => {
-    res.render('habits/edit'), {
-      habit,
-      title: "Edit Habit"
-    }
+    res.render("habits/edit", {
+      habit: habit,
+      title: "Edit Habits",
+    })
   })
   .catch(err => {
     console.log(err)
@@ -61,10 +61,29 @@ function edit(req, res) {
   })
 }
 
+function allHabits(req, res) {
+  Habit.find({})
+  .populate('owner')
+  .then(habit => {
+    console.log(habit) //DELETELATER
+    res.render('habits/allHabits', {
+      habit: habit,
+      title: "All Habits",
+    })
+  })
+  .catch(err => {
+    console.log(err) //KEEP
+    res.redirect('/')
+  })
+  
+}
+
+
+
 export {
   index,
   create,
   show,
-  edit
-
+  edit,
+  allHabits
 }

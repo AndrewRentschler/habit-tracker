@@ -1,0 +1,20 @@
+<%- include('../partials/html-head') %>
+<%- include('../partials/nav') %>
+<section>
+  <h1>Habits</h1>
+  <ul>
+    <% habit.forEach(habit => { %>
+      <form action="/habits"></form>
+        <li>
+          <%= habit.btnName %> Streak: <%= habit.currentStreak %> 
+          <a href="/habits/<%= habit._id %>/edit"><button>edit</button></a>
+        </li>
+      </form>
+    <% }) %>
+  </ul>
+</section>
+
+
+
+
+<%- include('../partials/footer') %>

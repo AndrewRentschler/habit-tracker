@@ -7,8 +7,10 @@ const router = Router()
 
 // GET localhost:3000/habits
 router.get('/', habitsCtrl.index)
-router.get('/:habitId', habitsCtrl.show)
+router.get('/allHabits', isLoggedIn, habitsCtrl.allHabits)
+router.get('/:habitId', isLoggedIn, habitsCtrl.show)
 router.get('/:habitId/edit', isLoggedIn, habitsCtrl.edit)
+// router.get('/:habitId/update', isLoggedIn, habitsCtrl.update)
 
 // POST localhost:3000/habits
 router.post('/', isLoggedIn, habitsCtrl.create)

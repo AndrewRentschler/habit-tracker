@@ -17,7 +17,6 @@ body {
   /* Use a system font, if none are available use any found sans-sarif font */
   font-family: system-ui, 'Segoe UI', Roboto, Oxygen-Sans, Ubuntu, Cantarell, 
     'Helvetica Neue', sans-serif;
-  margin: 0 auto;
 }
 
 nav {
@@ -40,22 +39,33 @@ main {
 
 h1 {
   font-size: 36px;
+  text-align: center;
 }
 
 h2 {
   font-size: 30px;
+  text-align: center;
 }
 
 h3 {
   font-size: 24px;
+  text-align: center;
 }
 
 ul {
   list-style-type: none;
 }
 
-p, label, li, button, input {
+p, label, input {
   font-size: 18px;
+}
+li {
+  align-items: center;
+  text-align: center;
+}
+
+button {
+  padding: 0 5px;
 }
 
 label {
@@ -64,8 +74,6 @@ label {
 
 section {
   text-align: center;
-  margin: auto;
-  padding: 50px;
 }
 
 a {

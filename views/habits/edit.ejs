@@ -1,0 +1,20 @@
+<%- include('../partials/html-head') %>
+<%- include('../partials/nav') %>
+<section>
+<p><%= habit.btnName %></p>
+
+<input 
+  type="text" 
+  name="btnName"
+  autocomplete="off"
+  >
+<button>Change Name</button>
+<p>Streak: <%= habit.currentStreak %></p>
+<button>Reset Streak</button>
+
+</section>
+
+
+
+
+<%- include('../partials/footer') %>

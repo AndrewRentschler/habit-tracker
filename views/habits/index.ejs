@@ -3,6 +3,15 @@
 
 <section>
   <h1>Habits</h1>
+  <ul>
+    <% habit.forEach(habit => { %>
+      <li>
+        <a href="habits/<%= habit._id %>/edit">
+        <button><%= habit.btnName %> - <%= habit.currentStreak %></button>
+        </a>
+      </li>
+    <% }) %>
+  </ul>
   <% if (user) { %>
     <h2>Add a Habit to Track</h2>
     <form action="/habits" method="POST">
@@ -14,15 +23,5 @@
       <button type="submit">Add</button>
     </form>
   <% } %>
-  <h2>Habits</h2>
-  <ul>
-    <% habit.forEach(habit => { %>
-      <li>
-        <a href="/habits/<%= habit._id %>">
-        <button><%= habit.btnName %></button>
-        </a>
-      </li>
-    <% }) %>
-  </ul>
 </section>
 <%- include('../partials/footer') %>
