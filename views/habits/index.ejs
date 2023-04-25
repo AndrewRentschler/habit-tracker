@@ -3,17 +3,23 @@
 
 <section>
   <h1>Habits</h1>
-  <ul>
-    <% habit.forEach(habit => { %>
-      <li>
-        <a href=""><%= habit.btnName %> - <%= habit.currentStreak %></a>
-        <%= habit.btnName %> - <%= habit.currentStreak %>
-        <a href="habits/<%= habit._id %>/edit">
-        <button>edit</button>
-        </a>
-      </li>
+  <div class="habits-container">
+    <% habit.forEach( habit => { %>
+      <div class="habit-card">
+        <div class="habit-card-text">
+          <%= habit.btnName %>
+        </div>
+        <div class="habit-card-streak">
+          <%= habit.currentStreak %>
+        </div>
+        <div class="habit-card-editBtn">
+          <a href="habits/<%= habit._id %>/edit">
+            <button>I did it!</button>
+          </a>
+        </div>
+      </div>
     <% }) %>
-  </ul>
+    </div>
   <% if (user) { %>
     <h2>Add a Habit to Track</h2>
     <form action="/habits" method="POST">
