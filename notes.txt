@@ -6,3 +6,32 @@
       </li>
     <% }) %>
   </ul> -->
+
+
+
+  <%- include('../partials/html-head') %>
+<%- include('../partials/nav') %>
+
+<section>
+  <h1>Habits</h1>
+  <% if (user) { %>
+    <h2>Add a Habit to Track</h2>
+    <form action="/habits" method="POST">
+      <label>
+        Name:
+        <input type="text" name="btnName" autocomplete="off">
+      </label>
+      
+      <button type="submit">Add</button>
+    </form>
+  <% } %>
+  <h2>Habits</h2>
+  <ul>
+    <% habit.forEach(habit => { %>
+      <li>
+        <a href="/habits/<%= habit._id %>"><%= habit.btnName %> </a>
+      </li>
+    <% }) %>
+  </ul>
+</section>
+<%- include('../partials/footer') %>

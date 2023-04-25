@@ -18,7 +18,9 @@
   <ul>
     <% habit.forEach(habit => { %>
       <li>
-        <a href="/habits/<%= habit._id %>"><%= habit.btnName %> </a>
+        <a href="/habits/<%= habit._id %>">
+        <button><%= habit.btnName %></button>
+        </a>
       </li>
     <% }) %>
   </ul>
