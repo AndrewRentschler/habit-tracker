@@ -2,6 +2,7 @@
 <%- include('../partials/nav') %>
 
 <section>
+  <% if (user) { %>
   <h1>Habits</h1>
   <div class="habits-container">
     <% habit.forEach( habit => { %>
@@ -21,12 +22,15 @@
               >
                 <button type="submit">I did it!</button>
             </form>
+            <div class="progress">
+              <div class="progress-bar w-75 progress-bar-striped progress-bar-animated" style="width: 75%" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100"></div>
+            </div>
           </div>
         </div>
       </div>
     <% }) %>
     </div>
-  <% if (user) { %>
+
     <h2>Add a Habit to Track</h2>
     <form action="/habits" method="POST">
       <label>
