@@ -12,7 +12,7 @@ function index(req, res) {
   })
   .catch(err => {
     console.log(err) //KEEP
-    res.redirect('/')
+    res.redirect('/habits')
   })
 }
 
@@ -73,17 +73,33 @@ function allHabits(req, res) {
   })
   .catch(err => {
     console.log(err) //KEEP
-    res.redirect('/')
+    res.redirect('/habits')
   })
-  
 }
 
+function update(req, res) {
+  Habit.findById(req.params.habitId)
+  .then(habit => {
+    console.log(habit) //DELETELATER
+    habit.currentStreak += 1
+    console.log(habit) //DELETELATER
+    habit.save()
+    .then(()=> {
+      res.redirect('/habits')
+    })
+  })
+  .catch(err => {
+    console.log(err) //KEEP
+    res.redirect('/habits')
+  })
 
+}
 
 export {
   index,
   create,
   show,
   edit,
-  allHabits
+  allHabits,
+  update,
 }

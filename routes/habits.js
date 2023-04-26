@@ -10,9 +10,12 @@ router.get('/', habitsCtrl.index)
 router.get('/allHabits', isLoggedIn, habitsCtrl.allHabits)
 router.get('/:habitId', isLoggedIn, habitsCtrl.show)
 router.get('/:habitId/edit', isLoggedIn, habitsCtrl.edit)
-// router.get('/:habitId/update', isLoggedIn, habitsCtrl.update)
+
 
 // POST localhost:3000/habits
 router.post('/', isLoggedIn, habitsCtrl.create)
+
+// PATCH localhost:3000/habits
+router.patch('/:habitId', isLoggedIn, habitsCtrl.update)
 
 export { router }

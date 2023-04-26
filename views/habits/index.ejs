@@ -6,16 +6,22 @@
   <div class="habits-container">
     <% habit.forEach( habit => { %>
       <div class="habit-card">
-        <div class="habit-card-text">
-          <%= habit.btnName %>
-        </div>
-        <div class="habit-card-streak">
-          <%= habit.currentStreak %>
-        </div>
-        <div class="habit-card-editBtn">
-          <a href="habits/<%= habit._id %>/edit">
-            <button>I did it!</button>
-          </a>
+        <div class="habit-card-items">
+          <div class="habit-card-text">
+            <%= habit.btnName %>
+          </div>
+          <div class="habit-card-streak">
+            <%= habit.currentStreak %>
+          </div>
+          <div class="habit-card-editBtn">
+            <form 
+              action="/habits/<%= habit._id %>?_method=PATCH" 
+              name="currentStreak"
+              method="POST"
+              >
+                <button type="submit">I did it!</button>
+            </form>
+          </div>
         </div>
       </div>
     <% }) %>
