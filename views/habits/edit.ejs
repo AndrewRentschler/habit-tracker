@@ -3,29 +3,27 @@
 <section>
 <p><%= habit.btnName %></p>
 
-<input 
+<form 
+  action="/habits/<%= habit._id %>/changeName?_method=PATCH" 
+  method="POST"
+  >
+  <input 
   type="text" 
-  name="btnName"
+  name="newName"
   autocomplete="off"
   >
-<form 
-              action="/habits/<%= habit._id %>?_method=PATCH" 
-              name="btnName"
-              method="POST"
-              >
-                <button type="submit">Change Name</button>
-            </form>
+    <button type="submit">Change Name</button>
+</form>
 
 <p>Streak: <%= habit.currentStreak %></p>
-<button>Reset Streak</button>
 
 </section>
 <form 
-action="/habits/<%= habit._id %>?_method=PATCH" 
-name="currentStreak"
+action="/habits/<%= habit._id %>/resetStreak?_method=PATCH" 
+name="resetStreak"
 method="POST"
 >
-  <button type="submit">I did it!</button>
+  <button type="submit">Reset Streak</button>
 </form>
 
 

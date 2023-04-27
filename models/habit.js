@@ -21,7 +21,6 @@ const habitSchema = new Schema({
     type: Schema.Types.ObjectId, 
     ref: 'Profile' 
   },
-  description: String,
   currentStreak: {
     type: Number,
     default: 0,

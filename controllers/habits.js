@@ -20,7 +20,6 @@ function create(req, res){
   console.log('init create controller') //DELETELATER
   req.body.owner = req.user.profile._id
   req.body.longName = "abc"
-  req.body.description = "description"
   req.body.currentStreak = 0
   Habit.create(req.body)
   .then(habit => {
@@ -92,6 +91,41 @@ function update(req, res) {
     console.log(err) //KEEP
     res.redirect('/habits')
   })
+}
+
+function resetStreak(req, res) {
+  Habit.findById(req.params.habitId)
+  .then(habit => {
+    console.log(habit) //DELETELATER
+    habit.currentStreak = 0
+    console.log(habit) //DELETELATER
+    habit.save()
+    .then(()=> {
+      res.redirect('/habits')
+    })
+  })
+  .catch(err => {
+    console.log(err) //KEEP
+    res.redirect('/habits')
+  })
+
+}
+
+function changeName(req, res) {
+  Habit.findById(req.params.habitId)
+  .then(habit => {
+    console.log(habit) //DELETELATER
+    habit.btnName = req.body.newName
+    console.log(habit) //DELETELATER
+    habit.save()
+    .then(()=> {
+      res.redirect('/habits')
+    })
+  })
+  .catch(err => {
+    console.log(err) //KEEP
+    res.redirect('/habits')
+  })
 
 }
 
@@ -102,4 +136,6 @@ export {
   edit,
   allHabits,
   update,
+  resetStreak,
+  changeName
 }

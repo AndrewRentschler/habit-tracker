@@ -16,6 +16,8 @@ router.get('/:habitId/edit', isLoggedIn, habitsCtrl.edit)
 router.post('/', isLoggedIn, habitsCtrl.create)
 
 // PATCH localhost:3000/habits
+router.patch('/:habitId/resetStreak', isLoggedIn, habitsCtrl.resetStreak)
+router.patch('/:habitId/changeName', isLoggedIn, habitsCtrl.changeName)
 router.patch('/:habitId', isLoggedIn, habitsCtrl.update)
 
 export { router }
