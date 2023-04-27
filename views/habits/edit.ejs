@@ -8,12 +8,25 @@
   name="btnName"
   autocomplete="off"
   >
-<button>Change Name</button>
+<form 
+              action="/habits/<%= habit._id %>?_method=PATCH" 
+              name="btnName"
+              method="POST"
+              >
+                <button type="submit">Change Name</button>
+            </form>
+
 <p>Streak: <%= habit.currentStreak %></p>
 <button>Reset Streak</button>
 
 </section>
-
+<form 
+action="/habits/<%= habit._id %>?_method=PATCH" 
+name="currentStreak"
+method="POST"
+>
+  <button type="submit">I did it!</button>
+</form>
 
 
 
