@@ -12,6 +12,8 @@ router.get('/journals', isLoggedIn, journalCtrl.journals)
 router.get('/:journalId/edit', isLoggedIn, journalCtrl.edit)
 
 // POST localhost:3000/journals
+router.post('/:journalId/update', isLoggedIn, journalCtrl.update)
 router.post('/', isLoggedIn, journalCtrl.create)
+
 
 export { router }

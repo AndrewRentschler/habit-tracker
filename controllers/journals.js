@@ -41,8 +41,24 @@ function edit(req, res) {
   })
 }
 
+function update(req, res) {
+  Journal.findById(req.params.journalId)
+  .then(journal => {
+    journal.entry = req.body.editJournal
+    journal.save()
+    .then(()=> {
+      res.redirect('/journals')
+    })
+  })
+  .catch(err => {
+    console.log(err) //KEEP
+    res.redirect('/habits')
+  })
+}
+
 export {
   journals,
   create,
-  edit
+  edit,
+  update
 }
