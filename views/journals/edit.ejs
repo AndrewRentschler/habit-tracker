@@ -1,0 +1,27 @@
+<%- include('../partials/html-head') %>
+<%- include('../partials/nav') %>
+<section>
+<div class="edit-journal-container">
+  <form 
+    action="/journals/<%= journal._id %>/edit"
+    method="POST"
+  >
+    <textarea 
+    id="journal-entry" 
+    name="editJournal"
+    rows="4" 
+    cols="50" 
+    autocomplete="off"
+    maxlength="1024"
+  ><%= journal.entry %></textarea>
+  <br>
+  <button type="submit">Submit</button>
+  </form>
+</div>
+
+
+
+
+
+
+  <%- include('../partials/footer') %>

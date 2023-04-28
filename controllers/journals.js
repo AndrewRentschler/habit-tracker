@@ -27,7 +27,22 @@ function create(req, res){
   })
 }
 
+function edit(req, res) {
+  Journal.findById(req.params.journalId)
+  .then(journal => {
+    res.render("journals/edit", {
+      journal,
+      title: "Edit Journal",
+    })
+  })
+  .catch(err => {
+    console.log(err)
+    res.redirect('/habits')
+  })
+}
+
 export {
   journals,
   create,
+  edit
 }

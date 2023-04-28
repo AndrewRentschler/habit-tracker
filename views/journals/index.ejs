@@ -15,7 +15,6 @@
           cols="50" 
           autocomplete="off"
           maxlength="1024"
-          value=""
         >
         </textarea>
         <br>
@@ -27,8 +26,8 @@
     <% journal.forEach( journal => { %>
       <div id="journal-card">
         <div id="journal-card-entry"><%= journal.entry %></div>
-        <div><button>edit</button></div>
-        <a href=""></a>
+        <a href="/journals/<%= journal._id %>/edit"><button>edit</button></a>
+        
       </div>
     <% }) %>
   </div>

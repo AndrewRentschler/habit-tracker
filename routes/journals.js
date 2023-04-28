@@ -9,7 +9,7 @@ router.get('/', journalCtrl.journals)
 
 router.get('/journals', isLoggedIn, journalCtrl.journals)
 // router.get('/:journalId', isLoggedIn, journalCtrl.show)
-// router.get('/:journalId/edit', isLoggedIn, journalCtrl.edit)
+router.get('/:journalId/edit', isLoggedIn, journalCtrl.edit)
 
 // POST localhost:3000/journals
 router.post('/', isLoggedIn, journalCtrl.create)
