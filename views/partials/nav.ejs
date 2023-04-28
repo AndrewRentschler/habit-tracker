@@ -5,15 +5,15 @@
 <body>
 <nav>  
   <div id="nav-journals">
-    <a href="/journals">Journals</a>
+    <a href="/journals"><button>Journals</button></a>
   </div>
   <div id="nav-home">
-    <a href="/habits">Home</a>
+    <a href="/habits"><button>Home</button></a>
   </div>
 
   <div id="nav-logout">
     <% if (user) { %>
-      <a href="/auth/logout">Logout</a>
+      <a href="/auth/logout"><button>Logout</button></a>
     <% } else { %>
       <div 
         id="g_id_onload"
