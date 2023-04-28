@@ -23,11 +23,13 @@
   </div>
   <div id="journal-entries-container">
     <% journal.forEach( journal => { %>
+      <% if (journal.owner.equals(user.profile._id)) { %>
       <div id="journal-card">
         <div id="journal-card-entry"><%= journal.entry %></div>
         <a href="/journals/<%= journal._id %>/edit"><button>edit</button></a>
         
       </div>
+      <% } %>
     <% }) %>
   </div>
 <% } %>

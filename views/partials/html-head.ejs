@@ -14,5 +14,9 @@
   type="image/png" 
   sizes="32x32"
   >
-
     <title><%= title %></title>
+  	<% if (!user) { %>
+      <script defer src="https://accounts.google.com/gsi/client"></script>
+    <% } %>
+  </head>
+  <body>

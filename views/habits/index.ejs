@@ -6,30 +6,32 @@
   <h1>Habits</h1>
   <div class="habits-container">
     <% habit.forEach( habit => { %>
-      <div class="habit-card">
-        <div class="habit-card-items">
-          <div class="habit-card-text">
-            <%= habit.btnName %>
+      <% if (habit.owner.equals(user.profile._id)) { %>
+        <div class="habit-card">
+          <div class="habit-card-items">
+            <div class="habit-card-text">
+              <%= habit.btnName %>
+            </div>
+            <div class="habit-card-streak">
+              <%= habit.currentStreak %>
+            </div>
+            <div id="streak-label">Streak</div>
+            <div class="habit-card-editBtn">
+              <form 
+                action="/habits/<%= habit._id %>?_method=PATCH" 
+                name="currentStreak"
+                method="POST"
+                >
+                  <button type="submit">I did it!</button>
+              </form>
+            </div>
+            
           </div>
-          <div class="habit-card-streak">
-            <%= habit.currentStreak %>
+          <div id="edit-btn">
+            <a href="/habits/<%= habit._id %>/edit"><button id="edit-btn">edit</button></a>
           </div>
-          <div id="streak-label">Streak</div>
-          <div class="habit-card-editBtn">
-            <form 
-              action="/habits/<%= habit._id %>?_method=PATCH" 
-              name="currentStreak"
-              method="POST"
-              >
-                <button type="submit">I did it!</button>
-            </form>
-          </div>
-          
         </div>
-        <div id="edit-btn">
-          <a href="/habits/<%= habit._id %>/edit"><button id="edit-btn">edit</button></a>
-        </div>
-      </div>
+      <% } %>
     <% }) %>
     </div>
     <div class="habit-card" id="habit-card-add-habit">

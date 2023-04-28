@@ -25,5 +25,6 @@ https://habitstreaker.fly.dev/habits
 
 ## Next Steps ( Ice Box )
 
-- Add more time functionality
+- Add time functionality
+- Add goals & progress bar
 - Have a leaderboard
