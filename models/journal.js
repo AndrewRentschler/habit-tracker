@@ -9,7 +9,6 @@ const journalSchema = new Schema({
   timestamps: true,
 })
 
-// const User = mongoose.model('User', userSchema)
 const Journal = mongoose.model('Journal', journalSchema)
 
 export {

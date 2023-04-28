@@ -1,6 +1,6 @@
 :root {
   --main-bg-color: #f6f6f6;
-  --main-color:
+  --main-color: #3175A9;
 }
 
 html {
@@ -18,7 +18,7 @@ html {
 
 body {
   background-color: var(--main-bg-color);
-  color: #f6f6f6;
+  color: #3175A9;
   /* Use a system font, if none are available use any found sans-sarif font */
   font-family: 'Cabin', sans-serif;
 }
@@ -28,11 +28,14 @@ nav {
   color: #1a1a1a;
   box-shadow: inset 0px 0px 2px 1px #3175A9;
   display: flex;
+  justify-content: space-evenly;
   align-items: center;
-  justify-content: center;
   min-height: 42px;
-  border-radius: 10px;
+  border-radius: 12px;
+  padding: 0px 12px;
 }
+
+
 
 main {
   background-color: red;
@@ -58,67 +61,47 @@ p, label, input {
   font-size: 18px;
 }
 
-button {
-  padding: 20px;
-  border-radius: 20px;
-  font-size: large;
-  background-color: whitesmoke;
-  color: #3175A9;
-  border: none;
+
+.edit-btn {
+  display: flex;
+  justify-content: right;
+  min-width: 100%;
 }
 
-element.style {
-  width: 75%;
-}
-.w-75 {
-  width: 75%!important;
-}
-.progress-bar-animated {
-  -webkit-animation: progress-bar-stripes 1s linear infinite;
-  animation: progress-bar-stripes 1s linear infinite;
-}
-.progress-bar-striped {
-  background-image: linear-gradient(45deg,rgba(255,255,255,.15) 25%,transparent 25%,transparent 50%,rgba(255,255,255,.15) 50%,rgba(255,255,255,.15) 75%,transparent 75%,transparent);
-  background-size: 1rem 1rem;
-}
-.progress-bar {
-  display: -ms-flexbox;
+#nav-home {
   display: flex;
-  -ms-flex-direction: column;
-  flex-direction: column;
-  -ms-flex-pack: center;
   justify-content: center;
-  color: #fff;
-  text-align: center;
-  white-space: nowrap;
-  background-color: #007bff;
-  transition: width .6s ease;
+  width: 30%;
 }
-*, *:before, *:after {
-  box-sizing: inherit;
-}
-*, ::after, ::before {
-  box-sizing: border-box;
-}
-user agent stylesheet
-div {
-  display: block;
-}
-.progress {
-  display: -ms-flexbox;
+#nav-logout {
   display: flex;
-  height: 1rem;
-  overflow: hidden;
-  font-size: .75rem;
-  background-color: #e9ecef;
-  border-radius: 0.25rem;
+  justify-content: right;
+  width: 30%;
 }
+
+#nav-journals {
+  display: flex;
+  justify-content: left;
+  width: 30%;
+}
+
+button {
+  padding: 6px 12px;
+  border-radius: 12px;
+  font-size: large;
+  color: whitesmoke;
+  background-color: #3175A9;
+  border: none;
+  margin: 3px 0px;
+}
+
 ul {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
 }
+
 li {
   display: flex;
   flex-direction: row;
@@ -136,12 +119,15 @@ label {
 }
 
 section {
-  background-color: #3175A9;
+  background-color: var(--main-bg-color);;
   border-radius: 5px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .habits-container {
-  background-color: #3175A9;
+  background-color: var(--main-bg-color);;
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
@@ -150,8 +136,7 @@ section {
 }
 
 .habit-card {
-  background-color: #3175A9;
-  box-shadow: inset 0px 0px 20px 10px #3175A9;
+  background-color: var(--main-bg-color);
   display: flex;
   flex-direction: column;
   justify-content: space-evenly;
@@ -159,15 +144,13 @@ section {
   width: 200px;
   padding: 10px 10px;
   margin: 10px 10px;
-  border-radius: 20%;
+  border-radius: 5%;
   border: #143046;
   border-width: 3px;
   border-style: solid;
 }
 
 .habit-card-items {
-  padding: 10px;
-  /* margin: 10px; */
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -177,14 +160,35 @@ section {
 .habit-card-text {
   font-size: x-large;
   padding-bottom: 5px;
+  text-align: center;
 }
 
 .habit-card-streak {
-  font-size: x-large;
-  padding: 10px 10px;
+  font-size: xx-large;
+  padding: 10px 10px 0px 10px;
   /* background-color: rgba(255, 0, 0, .1); */
   border-radius: 10px;
 }
+
+#streak-label {
+  letter-spacing: 2px;
+  vertical-align: text-top;
+  margin-top: -10px;
+}
+
+.edit-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
 
 a {
   color: #00B7FF;
@@ -198,9 +202,6 @@ nav > a {
   margin: 2px 8px;
   text-decoration: none;
   font-size: 24px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
 }
 
 footer {
@@ -223,4 +224,42 @@ footer {
 
 .inline {
   display: inline;
+}
+
+#journal-container {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
+#journal-entry-container {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
+#journal-entries-container {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  min-height: 600px;
+  min-width: 60%;
+  align-items: center;
+  justify-content: flex-start;
+  margin-top: 12px;
+}
+#journal-card {
+  display: flex;
+  justify-content: center;
+  flex-direction: row;
+  text-align: center;
+  padding: 12px;
+  margin: 6px;
+  border-width: 3px;
+  border: #3175A9;
+  border-style: solid;
+  border-radius: 6px;
+  min-width: 80%;
+}
+#journal-card-entry {
+  min-width: 90%;
+  text-align: left;
 }

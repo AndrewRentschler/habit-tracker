@@ -13,6 +13,8 @@ const habitSchema = new Schema({
   btnName: {
     type: String,
     required: true,
+    min: 0,
+    max: 32,
   },
   longName: {
     type: String,

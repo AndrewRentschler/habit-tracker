@@ -1,31 +1,33 @@
 <%- include('../partials/html-head') %>
 <%- include('../partials/nav') %>
 <section>
-<p><%= habit.btnName %></p>
-
-<form 
-  action="/habits/<%= habit._id %>/changeName?_method=PATCH" 
-  method="POST"
-  >
-  <input 
-  type="text" 
-  name="newName"
-  autocomplete="off"
-  >
+<h1><%= habit.btnName %></h1>
+<div class="edit-container">
+  <form 
+    action="/habits/<%= habit._id %>/changeName?_method=PATCH" 
+    method="POST"
+    >
+    <input 
+    type="text" 
+    name="newName"
+    autocomplete="off"
+    >
+    <div></div>
     <button type="submit">Change Name</button>
-</form>
+  </form>
 
-<p>Streak: <%= habit.currentStreak %></p>
+  <p>Streak: <%= habit.currentStreak %></p>
 
+
+    <form 
+    action="/habits/<%= habit._id %>/resetStreak?_method=PATCH" 
+    name="resetStreak"
+    method="POST"
+    >
+      <button type="submit">Reset Streak</button>
+  </form>
+</div>
 </section>
-<form 
-action="/habits/<%= habit._id %>/resetStreak?_method=PATCH" 
-name="resetStreak"
-method="POST"
->
-  <button type="submit">Reset Streak</button>
-</form>
-
 
 
 <%- include('../partials/footer') %>

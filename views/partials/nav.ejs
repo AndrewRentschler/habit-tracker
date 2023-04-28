@@ -3,27 +3,33 @@
 <% } %>
 </head>
 <body>
-<nav>
-  <a href="/habits/allhabits">Habits</a>
-  <a href="/habits">Home</a>
-  <a href="/profiles">Profile</a>
-  <% if (user) { %>
-    <a href="/auth/logout">Byeee</a>
-  <% } else { %>
-    <div 
-      id="g_id_onload"
-      data-client_id="<%= googleClientID %>"
-      data-login_uri="/auth/google"
-      data-auto_prompt="false"
-    ></div>
-    <div 
-      class="g_id_signin"
-      data-type="standard"
-      data-size="large"
-      data-theme="filled_black"
-      data-text="sign_in_with"
-      data-shape="rectangular"
-      data-logo_alignment="left"
-    ></div>
-  <% } %>
+<nav>  
+  <div id="nav-journals">
+    <a href="/habits/journals">Journals</a>
+  </div>
+  <div id="nav-home">
+    <a href="/habits">Home</a>
+  </div>
+
+  <div id="nav-logout">
+    <% if (user) { %>
+      <a href="/auth/logout">Logout</a>
+    <% } else { %>
+      <div 
+        id="g_id_onload"
+        data-client_id="<%= googleClientID %>"
+        data-login_uri="/auth/google"
+        data-auto_prompt="false"
+      ></div>
+      <div 
+        class="g_id_signin"
+        data-type="standard"
+        data-size="large"
+        data-theme="filled_black"
+        data-text="sign_in_with"
+        data-shape="rectangular"
+        data-logo_alignment="left"
+      ></div>
+    <% } %>
+  </div>
 </nav>

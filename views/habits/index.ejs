@@ -14,6 +14,7 @@
           <div class="habit-card-streak">
             <%= habit.currentStreak %>
           </div>
+          <div id="streak-label">Streak</div>
           <div class="habit-card-editBtn">
             <form 
               action="/habits/<%= habit._id %>?_method=PATCH" 
@@ -22,20 +23,26 @@
               >
                 <button type="submit">I did it!</button>
             </form>
-            <div class="progress">
-              <div class="progress-bar w-75 progress-bar-striped progress-bar-animated" style="width: 75%" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100"></div>
-            </div>
           </div>
+          
+        </div>
+        <div id="edit-btn">
+          <a href="/habits/<%= habit._id %>/edit"><button>edit</button></a>
         </div>
       </div>
     <% }) %>
     </div>
-
     <h2>Add a Habit to Track</h2>
     <form action="/habits" method="POST">
       <label>
         Name:
-        <input type="text" name="btnName" autocomplete="off">
+        <input 
+          type="text" 
+          name="btnName" 
+          autocomplete="off" 
+          maxlength="32"
+          size="16"
+        >
       </label>
       
       <button type="submit">Add</button>
