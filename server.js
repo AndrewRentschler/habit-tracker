@@ -22,8 +22,7 @@ import'./config/passport.js'
 import { router as indexRouter } from './routes/index.js'
 import { router as authRouter } from './routes/auth.js'
 import { router as habitsRouter } from './routes/habits.js'
-// import { router as usersRouter } from './routes/users.js'
-// import { router as profilesRouter } from './routes/profiles.js'
+import { router as journalsRouter } from './routes/journals.js'
 
 
 // create the express app
@@ -70,7 +69,7 @@ app.use(passDataToView)
 app.use('/', indexRouter)
 app.use('/auth', authRouter)
 app.use('/habits', habitsRouter)
-// app.use('/profiles', profilesRouter)
+app.use('/journals', journalsRouter)
 
 
 

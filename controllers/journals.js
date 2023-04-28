@@ -4,7 +4,7 @@ function journals(req, res) {
   Journal.find({})
   .populate('owner')
   .then(journal => {
-    res.render('habits/journal', {
+    res.render('journals/index', {
       journal,
       title: "Journal",
     })
@@ -19,7 +19,7 @@ function create(req, res){
   req.body.owner = req.user.profile._id
   Journal.create(req.body)
   .then(journal => {
-    res.redirect('/habits/journals')
+    res.redirect('/journals')
   })
   .catch(err => {
     console.log(err) //KEEP
