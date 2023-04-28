@@ -19,4 +19,6 @@ router.patch('/:habitId/resetStreak', isLoggedIn, habitsCtrl.resetStreak)
 router.patch('/:habitId/changeName', isLoggedIn, habitsCtrl.changeName)
 router.patch('/:habitId', isLoggedIn, habitsCtrl.update)
 
+router.delete('/:habitId', isLoggedIn, habitsCtrl.delete)
+
 export { router }

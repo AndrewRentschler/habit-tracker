@@ -17,6 +17,12 @@
   <br>
   <button type="submit">Submit</button>
   </form>
+  <form 
+  action="/journals/<%= journal._id %>?_method=DELETE" 
+  method="POST"
+>
+  <button>Delete Entry</button>
+</form>
 </div>
 
 

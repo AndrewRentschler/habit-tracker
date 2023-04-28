@@ -26,7 +26,7 @@ body {
 nav {
   background-color: #f6f6f6;
   color: #1a1a1a;
-  box-shadow: inset 0px 0px 2px 1px #3175A9;
+  box-shadow: inset 0px 0px 4px 4px #3175A9;
   display: flex;
   justify-content: space-evenly;
   align-items: center;
@@ -37,9 +37,10 @@ nav {
 
 
 h1 {
-  font-size: 36px;
+  font-size: 64px;
   text-align: center;
-  letter-spacing: 5px;
+  letter-spacing: 2px;
+  text-shadow: 2px 2px 4px var(--main-color);
 }
 
 h2 {
@@ -80,12 +81,17 @@ p, label, input {
   width: 30%;
 }
 
+#edit-btn {
+  background-color: rgba(255, 166, 0, 0.80);
+  border-radius: 12px;
+}
+
 button {
   padding: 6px 12px;
   border-radius: 12px;
   font-size: large;
   color: whitesmoke;
-  background-color: #3175A9;
+  background-color: rgba(49, 118, 170, 0.95);
   border: none;
   margin: 3px 0px;
 }
@@ -143,6 +149,7 @@ section {
   border: #143046;
   border-width: 3px;
   border-style: solid;
+  box-shadow: 2px 2px 8px 2px var(--main-color), -1px -1px 4px 1px var(--main-color);
 }
 
 .habit-card-items {
@@ -169,8 +176,15 @@ section {
 #streak-label {
   letter-spacing: 2px;
   vertical-align: text-top;
-  margin-top: -10px;
+  margin-top: -6px;
 }
+
+
+
+
+
+
+
 
 .edit-container {
   display: flex;
@@ -258,4 +272,7 @@ footer {
 #journal-card-entry {
   min-width: 90%;
   text-align: left;
+}
+textarea {
+  padding: 10px;
 }

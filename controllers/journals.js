@@ -56,9 +56,21 @@ function update(req, res) {
   })
 }
 
+function deleteJournal(req, res) {
+  Journal.findByIdAndDelete(req.params.journalId)
+  .then(entry => {
+    res.redirect("/journals")
+  })
+  .catch(err => {
+    console.log(err) //KEEP
+    res.redirect('/habits')
+  })
+}
+
 export {
   journals,
   create,
   edit,
-  update
+  update,
+  deleteJournal as delete
 }

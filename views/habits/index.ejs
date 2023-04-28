@@ -27,26 +27,24 @@
           
         </div>
         <div id="edit-btn">
-          <a href="/habits/<%= habit._id %>/edit"><button>edit</button></a>
+          <a href="/habits/<%= habit._id %>/edit"><button id="edit-btn">edit</button></a>
         </div>
       </div>
     <% }) %>
     </div>
-    <h2>Add a Habit to Track</h2>
-    <form action="/habits" method="POST">
-      <label>
-        Name:
-        <input 
-          type="text" 
-          name="btnName" 
-          autocomplete="off" 
-          maxlength="32"
-          size="16"
-        >
-      </label>
-      
-      <button type="submit">Add</button>
-    </form>
+    <div class="habit-card" id="habit-card-add-habit">
+      <h2>Add Habit</h2>
+      <form action="/habits" method="POST">
+          <input 
+            type="text" 
+            name="btnName" 
+            autocomplete="off" 
+            maxlength="32"
+            size="16"
+          >
+        <button type="submit">Add</button>
+      </form>
+    </div>
   <% } %>
 </section>
 <%- include('../partials/footer') %>

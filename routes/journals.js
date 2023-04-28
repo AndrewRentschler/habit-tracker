@@ -11,6 +11,8 @@ router.get('/journals', isLoggedIn, journalCtrl.journals)
 // router.get('/:journalId', isLoggedIn, journalCtrl.show)
 router.get('/:journalId/edit', isLoggedIn, journalCtrl.edit)
 
+router.delete('/:journalId', isLoggedIn, journalCtrl.delete)
+
 // POST localhost:3000/journals
 router.post('/:journalId/update', isLoggedIn, journalCtrl.update)
 router.post('/', isLoggedIn, journalCtrl.create)

@@ -86,7 +86,6 @@ function resetStreak(req, res) {
     console.log(err) //KEEP
     res.redirect('/habits')
   })
-
 }
 
 function changeName(req, res) {
@@ -102,8 +101,19 @@ function changeName(req, res) {
     console.log(err) //KEEP
     res.redirect('/habits')
   })
-
 }
+
+function deleteHabit(req, res) {
+  Habit.findByIdAndDelete(req.params.habitId)
+  .then(habit => {
+    res.redirect('/habits')
+  })
+  .catch(err => {
+    console.log(err) //KEEP
+    res.redirect('/habits')
+  })
+}
+
 
 export {
   index,
@@ -112,5 +122,6 @@ export {
   edit,
   update,
   resetStreak,
-  changeName
+  changeName,
+  deleteHabit as delete
 }
