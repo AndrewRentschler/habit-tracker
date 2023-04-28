@@ -1,10 +1,15 @@
 :root {
-  --main-bg-color: #f6f6f6;
+  --main-bg-color: #f0f0f0;
   --main-color: #3175A9;
+  --main-accent: #3175A9;
+  --main-accent-dark: #143046;
+  --complimentary: rgba(255, 166, 0, 0.80);
+  --main-radius: 12px;
+  --tight-radius: 6px;
 }
 
 html {
-  box-sizing: border-box
+  box-sizing: border-box;
 }
 
 /* The Universal Selector */
@@ -24,8 +29,8 @@ body {
 }
 
 nav {
-  background-color: #f6f6f6;
-  color: #1a1a1a;
+  background-color: var(--main-bg-color);
+  color: var(--main-accent-dark);
   display: flex;
   justify-content: space-evenly;
   align-items: center;
@@ -33,7 +38,7 @@ nav {
   border-width: 4px;
   border-style: ridge;
   border-color: var(--main-color);
-  border-radius: 12px;
+  border-radius: var(--main-radius);
   padding: 0px 12px;
 }
 
@@ -55,8 +60,12 @@ h3 {
   font-size: 24px;
   text-align: center;
 }
+input {
+  padding: 5px;
+  border-radius: var(--tight-radius);
+}
 
-p, label, input {
+p, label {
   font-size: 18px;
 }
 
@@ -85,17 +94,17 @@ p, label, input {
 }
 
 #edit-btn {
-  background-color: rgba(255, 166, 0, 0.80);
-  border-radius: 12px;
+  background-color: var(--complimentary);
+  border-radius: var(--main-radius);
 }
 
 button {
   padding: 6px 12px;
-  border-radius: 12px;
+  border-radius: var(--main-radius);
   font-size: large;
   color: whitesmoke;
-  background-color: rgba(49, 118, 170, 0.95);
-  border: none;
+  background-color: var(--main-accent);
+  border: var(--complimentary);
   margin: 3px 0px;
 }
 
@@ -124,7 +133,7 @@ label {
 
 section {
   background-color: var(--main-bg-color);;
-  border-radius: 5px;
+  border-radius: var(--tight-radius);
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -148,8 +157,8 @@ section {
   width: 200px;
   padding: 10px 10px;
   margin: 10px 10px;
-  border-radius: 5%;
-  border: #143046;
+  border-radius: var(--main-radius);
+  border: var(--main-accent);
   border-width: 3px;
   border-style: solid;
   box-shadow: 2px 2px 8px 2px var(--main-color), -1px -1px 4px 1px var(--main-color);
@@ -172,8 +181,7 @@ section {
 .habit-card-streak {
   font-size: xx-large;
   padding: 10px 10px 0px 10px;
-  /* background-color: rgba(255, 0, 0, .1); */
-  border-radius: 10px;
+  border-radius: var(--main-radius);
 }
 
 #streak-label {
@@ -196,7 +204,7 @@ form {
 }
 
 a {
-  color: #00B7FF;
+  color: var(--main-accent);
 }
 
 pre {
@@ -259,9 +267,9 @@ footer {
   padding: 12px;
   margin: 6px;
   border-width: 3px;
-  border: #3175A9;
+  border: var(--main-accent);
   border-style: solid;
-  border-radius: 6px;
+  border-radius: var(--main-radius);
   min-width: 80%;
 }
 #journal-card-entry {
@@ -270,4 +278,5 @@ footer {
 }
 textarea {
   padding: 10px;
+  border-radius: var(--main-radius);
 }

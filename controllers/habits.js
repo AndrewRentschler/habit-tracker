@@ -114,7 +114,6 @@ function deleteHabit(req, res) {
   })
 }
 
-
 export {
   index,
   create,
