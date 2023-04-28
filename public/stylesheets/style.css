@@ -40,14 +40,14 @@ nav {
   border-style: ridge;
   border-color: var(--main-color);
   border-radius: var(--main-radius);
-  padding: 0px 12px;
+  padding: var(--tight-radius) var(--main-accent-dark);
 }
 
 
 h1 {
-  font-size: 64px;
+  font-size: 72px;
   text-align: center;
-  letter-spacing: 2px;
+  letter-spacing: 4px;
   text-shadow: 2px 2px 4px var(--main-color);
   margin: 0;
 }
@@ -100,10 +100,10 @@ p, label {
 }
 
 button {
-  padding: 6px 12px;
+  padding: var(--tight-radius) var(--main-radius);
   border-radius: var(--main-radius);
   font-size: large;
-  color: whitesmoke;
+  color: var(--main-bg-color);
   background-color: var(--main-accent);
   border: var(--complimentary);
   margin: 3px 0px;
