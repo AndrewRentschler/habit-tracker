@@ -1,23 +1,26 @@
 # Habit Streaker
 
-Habit Streaker is an app that allows users to log habits that they either want to start or break.
+### Habit Streaker is an app that allows users to log habits that they either want to start or break.
+
+![Habit Tracker Screenshot](public/Readme_img.png)
 
 ## Follow the Link Below! 
 
 https://habitstreaker.fly.dev/habits
 
-
+***
 
 ## Attributions
 
 - Google Fonts
 - Favicon
-- ADD PROGRESS BAR !!
 
 ## Technologies Used
 
 - HTML, CSS, JavaScript
-- Node, NPM, EJS
+- Node, npm, EJS
+- Mongoose, MongoDB
+- oAuth
 - GitHub, Git, Fly.io
 
 ## Next Steps ( Ice Box )

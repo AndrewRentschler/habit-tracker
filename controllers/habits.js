@@ -17,7 +17,6 @@ function index(req, res) {
 
 function create(req, res){
   req.body.owner = req.user.profile._id
-  req.body.longName = "abc"
   req.body.currentStreak = 0
   Habit.create(req.body)
   .then(habit => {
@@ -25,21 +24,6 @@ function create(req, res){
   })
   .catch(err => {
     console.log(err) //KEEP
-    res.redirect('/habits')
-  })
-}
-
-function show(req, res) {
-  Habit.findById(req.params.habitId)
-  .populate("owner")
-  .then(habit => {
-    res.render('habits/show', {
-      habit: habit,
-      title: "Habit Show"
-    })
-  })
-  .catch(err => {
-    console.log(err)
     res.redirect('/habits')
   })
 }
@@ -117,7 +101,6 @@ function deleteHabit(req, res) {
 export {
   index,
   create,
-  show,
   edit,
   update,
   resetStreak,
