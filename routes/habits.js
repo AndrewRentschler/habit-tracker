@@ -9,7 +9,6 @@ router.get('/', habitsCtrl.index)
 
 router.get('/:habitId/edit', isLoggedIn, habitsCtrl.edit)
 
-
 // POST localhost:3000/habits
 router.post('/', isLoggedIn, habitsCtrl.create)
 

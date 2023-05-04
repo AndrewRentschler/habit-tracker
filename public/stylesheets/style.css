@@ -13,6 +13,10 @@ html {
   word-wrap: break-word;
 }
 
+#g_signin_index {
+  text-align: center;
+}
+
 /* The Universal Selector */
 *, /* All elements*/
 *::before, /* All ::before pseudo-elements */
